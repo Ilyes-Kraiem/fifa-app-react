@@ -1,0 +1,79 @@
+.ea-navbar {
+  background: linear-gradient(90deg, #020617 0%, #0b1120 50%, #020617 100%);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.7);
+  z-index: 1000;
+}
+
+.mycontainer {
+  padding: 0.4rem 2rem;
+}
+
+.ea-brand {
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  font-size: 1.1rem;
+  color: #e5e7eb !important;
+  text-transform: uppercase;
+}
+
+.ea-brand span {
+  color: #facc15;
+}
+
+.ea-nav .nav-link,
+.ea-dropdown .nav-link,
+.ea-dropdown .dropdown-toggle {
+  color: #e5e7eb !important;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-right: 1rem;
+}
+
+.ea-nav .nav-link:hover,
+.ea-dropdown .dropdown-toggle:hover {
+  color: #facc15 !important;
+}
+
+.ea-dropdown .dropdown-menu {
+  background-color: #020617;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.ea-dropdown .dropdown-item {
+  color: #e5e7eb;
+  font-size: 0.8rem;
+}
+
+.ea-dropdown .dropdown-item:hover {
+  background-color: #111827;
+  color: #facc15;
+}
+
+.ea-search-input {
+  background-color: #020617;
+  border: 1px solid #4b5563;
+  color: #f9fafb;
+  font-size: 0.85rem;
+}
+
+.ea-search-input::placeholder {
+  color: #6b7280;
+}
+
+.ea-search-btn {
+  background: linear-gradient(135deg, #facc15, #eab308);
+  border: none;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding-inline: 1.2rem;
+  color: #111827;
+}
+
+.ea-search-btn:hover {
+  background: linear-gradient(135deg, #fde047, #facc15);
+  color: #020617;
+}

@@ -1,0 +1,105 @@
+.app-root {
+  min-height: 100vh;
+  position: relative;
+  color: #f9fafb;
+}
+
+.app-overlay {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    145deg,
+    rgba(5, 8, 22, 0.96),
+    rgba(9, 9, 30, 0.9),
+    rgba(12, 10, 35, 0.92)
+  );
+  backdrop-filter: blur(6px);
+}
+
+.fifa-title {
+  text-align: center;
+  font-size: 3rem;
+  letter-spacing: 0.15em;
+  font-weight: 800;
+  color: #facc15;
+  text-shadow: 0 0 24px rgba(250, 204, 21, 0.7);
+  margin-bottom: 0.5rem;
+}
+
+.fifa-subtitle {
+  text-align: center;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  margin-bottom: 3rem;
+}
+
+.player-grid {
+  margin-top: 2rem;
+}
+
+
+
+.player-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.player-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 26px 60px rgba(15, 23, 42, 0.95);
+  border-color: rgba(250, 204, 21, 0.8);
+}
+
+.player-image {
+  width: 80%;
+  height: 220px;
+  object-fit: contain;
+  margin: 1.5rem auto 0.5rem auto;
+  filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.8));
+}
+
+.player-body {
+  text-align: center;
+}
+
+.player-name {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+}
+
+.player-meta {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9ca3af !important;
+}
+
+.player-details {
+  font-size: 0.8rem;
+  color: #d1d5db;
+  margin-bottom: 1rem;
+}
+
+.player-details span {
+  margin-inline: 0.15rem;
+}
+
+.player-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem 1.2rem;
+  justify-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.player-btn {
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  padding-inline: 1.4rem;
+}
