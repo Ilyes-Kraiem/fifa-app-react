@@ -1,17 +1,23 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import players from "./players";
+import { Container, Row, Col } from "react-bootstrap";
 import Player from "./Player";
-
-function PlayersList() {
+import players from "./players";
+function PlayersList({ searchTerm = "" }) {
+  const normalized = searchTerm.toLowerCase();
+  const filteredPlayers = players.filter((player) => {
+    if (!normalized) return true;
+    return (
+      player.name.toLowerCase().includes(normalized) ||
+      player.team.toLowerCase().includes(normalized) ||
+      player.nationality.toLowerCase().includes(normalized)
+    );
+  });
   return (
     <Container className="player-grid">
       <Row className="g-4 justify-content-center">
-        {players.map((player) => (
+        {filteredPlayers.map((player) => (
           <Col
-            key={player.id}
+            key={player.id || player.name}
             xs={12}
             sm={6}
             md={4}
@@ -25,5 +31,4 @@ function PlayersList() {
     </Container>
   );
 }
-
 export default PlayersList;

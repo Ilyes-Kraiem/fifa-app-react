@@ -1,75 +1,44 @@
 import React from "react";
-import "./index.css";
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-
-function Navbarr() {
+import { Navbar, Nav, Container, Form, Button } from "react-bootstrap";
+import "./navbarr.css";
+function Navbarr({ onSearch }) {
+  const [value, setValue] = React.useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (onSearch) onSearch(value);
+  };
   return (
-    <Navbar expand="lg" className="ea-navbar" sticky="top" variant="dark">
-      <Container fluid>
-        {/* Brand */}
-        <Navbar.Brand href="#" className="ea-brand">
-          FC 25
+    <Navbar expand="lg" className="fc25-navbar" variant="dark">
+      <Container fluid className="px-5">
+        <Navbar.Brand href="#" className="fc25-logo">
+          <span className="logo-main">FC</span>
+          <span className="logo-sub">25</span>
         </Navbar.Brand>
-
-        {/* Toggle */}
-        <Navbar.Toggle aria-controls="navbarScroll" />
-
-        <Navbar.Collapse id="navbarScroll">
-          {/* Nav Links */}
-          <Nav className="me-auto my-2 my-lg-0 ea-nav" navbarScroll>
-            <NavDropdown title="ABOUT" id="about" className="ea-dropdown">
-              <NavDropdown.Item href="#about">About the game</NavDropdown.Item>
-              <NavDropdown.Item href="#modes">Game modes</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#more">More info</NavDropdown.Item>
-            </NavDropdown>
-
-            <NavDropdown title="FEATURES" id="features" className="ea-dropdown">
-              <NavDropdown.Item href="#ultimate-team">
-                Ultimate Team
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#career">Career Mode</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#online">Online Seasons</NavDropdown.Item>
-            </NavDropdown>
-
-            <Nav.Link href="#news" className="ea-link">
-              NEWS
-            </Nav.Link>
-
-            <NavDropdown title="COMMUNITY" id="community" className="ea-dropdown">
-              <NavDropdown.Item href="#forums">Forums</NavDropdown.Item>
-              <NavDropdown.Item href="#events">Events</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#support">Support</NavDropdown.Item>
-            </NavDropdown>
-
-            <Nav.Link href="#feedback" className="ea-link">
-              FC FEEDBACK
-            </Nav.Link>
-            <Nav.Link href="#ratings" className="ea-link">
-              RATINGS
-            </Nav.Link>
+        <Navbar.Toggle aria-controls="fc25-navbar-nav" />
+        <Navbar.Collapse id="fc25-navbar-nav">
+          <Nav className="me-auto fc25-nav-links">
+            <Nav.Link href="#">About</Nav.Link>
+            <Nav.Link href="#">Features</Nav.Link>
+            <Nav.Link href="#">Football Ultimate Team™</Nav.Link>
+            <Nav.Link href="#">News</Nav.Link>
+            <Nav.Link href="#">FC Ratings</Nav.Link>
+            <Nav.Link href="#">Community</Nav.Link>
           </Nav>
-
-          {/* Search */}
-          <Form className="d-flex ea-search">
+          <Form className="d-flex ea-search" onSubmit={handleSubmit}>
             <Form.Control
               type="search"
               placeholder="Search your best player"
               className="me-2 ea-search-input"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
             />
-            <Button className="ea-search-btn">Search</Button>
+            <Button className="ea-search-btn" type="submit">
+              SEARCH
+            </Button>
           </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 }
-
 export default Navbarr;

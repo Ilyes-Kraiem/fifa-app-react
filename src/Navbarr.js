@@ -6,58 +6,51 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-
 function Navbarr() {
   return (
     <Navbar expand="lg" className="ea-navbar" sticky="top">
       <Container fluid className="mycontainer">
-        {/* Brand */}
-        <Navbar.Brand href="#" className="ea-brand">
+        <Navbar.Brand href="#" className="ea-brand" >
           FC<span>25</span>
         </Navbar.Brand>
-
-        {/* Toggle */}
         <Navbar.Toggle aria-controls="navbarScroll" className="ea-toggle" />
-
         <Navbar.Collapse id="navbarScroll">
-          {/* Nav Links */}
           <Nav className="me-auto my-2 my-lg-0 ea-nav" navbarScroll>
             <NavDropdown title="ABOUT" id="about" className="ea-dropdown">
-              <NavDropdown.Item href="#about">The Game</NavDropdown.Item>
-              <NavDropdown.Item href="#modes">Game Modes</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#faq">FAQ</NavDropdown.Item>
+              <NavDropdown.Item href="#about">Authenticity</NavDropdown.Item>
+              <NavDropdown.Item href="#modes">Dual Entitlement</NavDropdown.Item>
+              <NavDropdown.Item href="#faq">EA Play Membership</NavDropdown.Item>
+              <NavDropdown.Item href="#faq">FC Club Membership</NavDropdown.Item>
             </NavDropdown>
-
             <NavDropdown title="FEATURES" id="features" className="ea-dropdown">
-              <NavDropdown.Item href="#ultimate-team">
-                Ultimate Team
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#career-mode">Career Mode</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#crossplay">Cross-play</NavDropdown.Item>
+              <NavDropdown.Item href="#ultimate-team">Features Overview</NavDropdown.Item>
+              <NavDropdown.Item href="#career-mode">5v5 Rush</NavDropdown.Item>
+              <NavDropdown.Item href="#career-mode">Gameplay</NavDropdown.Item>
+              <NavDropdown.Item href="#career-mode">Clubs</NavDropdown.Item>
+              <NavDropdown.Item href="#career-mode">Football Ultimate Team</NavDropdown.Item>
+              <NavDropdown.Item href="#career-mode">Heroes</NavDropdown.Item>
+              <NavDropdown.Item href="#career-mode">Icons</NavDropdown.Item>
+              <NavDropdown.Item href="#crossplay">FC Companion apps</NavDropdown.Item>
             </NavDropdown>
-
+            <Nav.Link href="#fut" className="ea-link">
+              Football Ultimate Team™
+            </Nav.Link>
             <Nav.Link href="#news" className="ea-link">
               NEWS
             </Nav.Link>
-
-            <NavDropdown title="COMMUNITY" id="community" className="ea-dropdown">
-              <NavDropdown.Item href="#forums">Forums</NavDropdown.Item>
-              <NavDropdown.Item href="#creators">Creators</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#events">Events</NavDropdown.Item>
-            </NavDropdown>
-
-            <Nav.Link href="#feedback" className="ea-link">
-              FC FEEDBACK
-            </Nav.Link>
             <Nav.Link href="#ratings" className="ea-link">
-              RATINGS
+              FC 25 Ratings
+            </Nav.Link>
+            <Nav.Link href="#fcpro" className="ea-link">
+              FC Pro
+            </Nav.Link>
+            <Nav.Link href="#community" className="ea-link">
+              Community
+            </Nav.Link>
+            <Nav.Link href="#tots" className="ea-link">
+              TOTS
             </Nav.Link>
           </Nav>
-
-          {/* Search */}
           <Form className="d-flex ea-search">
             <Form.Control
               type="search"
@@ -71,5 +64,4 @@ function Navbarr() {
     </Navbar>
   );
 }
-
 export default Navbarr;
